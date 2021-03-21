@@ -25,6 +25,7 @@
 
 class Song < ActiveRecord::Base
   validates :title, presence: true
+  validates_uniqueness_of :title, scope: [:release_year, :artist_name]
   # validates :title, uniqueness: {
   #   scope: %i[release_year artist_name],
   #   message: 'cannot be repeated by the same artist in the same year'
