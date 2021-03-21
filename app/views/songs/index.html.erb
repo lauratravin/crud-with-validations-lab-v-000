@@ -15,23 +15,23 @@
   </thead>
 
   <tbody>
-    <% @songs.each do |song| %>
+    <% @songs.each do |s| %>
       <tr>
-        <td><%= song.title %></td>
-        <td><%= song.release_year %></td>
-        <td><%= song.genre %></td>
-        <td><%= song.artist_name %></td>
+        <td><%= s.title %></td>
+        <td><%= s.release_year %></td>
+        <td><%= s.genre %></td>
+        <td><%= s.artist_name %></td>
         <td>
-          <%= link_to 'View', song %> |
-          <%= link_to 'Edit', edit_song_path(song) %> |
-          <%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %>
+          <%= link_to 'View', s %> |
+          <%= link_to 'Edit', edit_song_path(s) %> |
+          <%= link_to 'Delete', s, method: :delete, data: { confirm: 'For real?' } %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<!-- #without menu options 
+<!-- #without menu options
 <%= form_for(@song) do |f| %>
   <%= f.text_field :title %>
   <%= f.text_field :release_year %>
