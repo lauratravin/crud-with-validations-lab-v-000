@@ -1,0 +1,30 @@
+<h1>Songs</h1>
+<div><%= link_to 'Create Song', new_song_path %></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Genre</th>
+      <th>Artist name</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= form_for(@song) do |f| %>
+    <tr>
+      <td>   <%= f.text_field :title %>  </td>
+      <td>   <%= f.text_field :release_year %> </td>
+      <td>   <%= f.check_box :released %> </td>
+      <td>   <%= f.text_field :artist_name %> </td>
+      <td>   <%= f.text_field :genre %>  </td>
+      <td>  <%= link_to 'View', f %>
+        <%= link_to 'View', song %> |
+        <%= link_to 'Edit', edit_song_path(song) %> |
+        <%= link_to 'Delete', song, method: :delete, data: { confirm: 'For real?' } %>
+    <tr>
+    <% end %>
+  </tbody>
+</table>
